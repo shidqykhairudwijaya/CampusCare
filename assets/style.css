@@ -1,0 +1,357 @@
+/* CORE STYLE & COLORS  */
+:root {
+    --maroon: #800000;
+    --maroon-dark: #5c0000;
+    --grey-light: #f4f5f7;
+    --blue-soft: #e7f1ff;
+}
+
+body {
+    background-color: var(--grey-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.bg-login {
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+    ),
+    url('img/unsika.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Utilitas Warna & Tombol */
+.text-maroon { color: var(--maroon) !important; }
+.bg-maroon { background-color: var(--maroon) !important; }
+
+.btn-maroon {
+    background-color: var(--maroon) !important;
+    color: white !important;
+    border: none;
+    border-radius: 10px; /* Ditambahkan agar tombol konsisten melengkung */
+}
+.btn-maroon:hover {
+    background-color: var(--maroon-dark) !important;
+    color: white !important;
+}
+
+/* SIDEBAR COMPONENTS */
+.sidebar {
+    width: 250px; 
+    min-width: 250px; 
+    height: 100vh; 
+    position: sticky; 
+    top: 0; 
+    overflow-y: auto; 
+    background-color: white;
+    border-right: 1px solid #ddd;
+    transition: all 0.3s ease-in-out; 
+}
+
+/* Sidebar Gelap (Untuk Admin & Teknisi) */
+.sidebar.bg-dark {
+    background-color: #212529 !important;
+    border-right: none;
+}
+
+.sidebar-link {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+/* State Aktif & Hover */
+.sidebar-link:hover, 
+.sidebar-link.active {
+    background-color: var(--maroon) !important;
+    color: white !important;
+}
+
+/* Khusus Sidebar Dark Link */
+.sidebar.bg-dark .sidebar-link { 
+    color: #ced4da; 
+}
+.sidebar.bg-dark .sidebar-link:hover { 
+    background: rgba(255,255,255,0.1) !important; 
+    color: white !important;
+}
+.sidebar.bg-dark .sidebar-link.active { 
+    background-color: var(--maroon) !important; 
+    color: white !important;
+}
+
+/* TABLES & CARD INTERACTIONS */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+/* Efek Klik pada Baris Tabel Laporan */
+.report-row { 
+    cursor: pointer; 
+    transition: all 0.2s ease-in-out; 
+}
+.report-row:hover { 
+    background-color: #f8f9fa !important; 
+    transform: translateX(5px); 
+}
+
+/* Statistik Card (Dashboard Mahasiswa/Admin) */
+.stat-card { 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    cursor: pointer; 
+}
+.stat-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; 
+}
+
+/* IMAGES & BADGES */
+.img-table { 
+    width: 50px; 
+    height: 50px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+
+.object-fit-cover { object-fit: cover; }
+
+/* Gambar yang bisa di-zoom/diklik */
+.img-clickable, 
+.img-zoomable { 
+    cursor: zoom-in; 
+    transition: opacity 0.3s, transform 0.3s; 
+}
+.img-clickable:hover, 
+.img-zoomable:hover { 
+    opacity: 0.85; 
+    transform: scale(1.02); 
+}
+
+/* Badge Keahlian (Halaman Teknisi) */
+.badge-keahlian {
+    background-color: var(--blue-soft);
+    color: #0d6efd;
+    border: 1px solid #cfe2ff;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+/* Badge Ruangan (Halaman Detail Lokasi) */
+.badge-ruangan {
+    background-color: white;
+    color: #333;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Tombol X Hapus di Badge */
+.btn-delete-badge {
+    cursor: pointer;
+    transition: 0.2s;
+    color: #6c757d;
+}
+.btn-delete-badge:hover {
+    color: var(--maroon) !important;
+    transform: scale(1.2);
+}
+
+/* FILTER PILLS (Dashboard Admin) */
+.filter-pill {
+    cursor: pointer; 
+    font-weight: 600; 
+    font-size: 0.85rem; 
+    border-radius: 50px;
+    padding: 6px 16px; 
+    margin: 0 4px 8px 0; 
+    transition: 0.3s;
+    border: 1px solid #dee2e6; 
+    color: #6c757d; 
+    display: inline-block; 
+    background-color: white; 
+    text-decoration: none; 
+    user-select: none;
+}
+.filter-pill:hover { 
+    background-color: #f8f9fa; 
+    color: #343a40; 
+}
+.filter-pill.active { 
+    background-color: white !important; 
+    color: var(--maroon) !important; 
+    border-color: var(--maroon) !important; 
+    box-shadow: 0 0 0 2px rgba(128,0,0,0.2); 
+}
+
+/* Status Box Terlambat */
+.box-late { 
+    background-color: #dc3545 !important; 
+    color: white !important; 
+    border: none !important; 
+}
+
+/* AUTH & PASSWORD FORMS */
+.card-reset { 
+    max-width: 400px; 
+    margin: 80px auto; 
+    border: none; 
+    border-radius: 15px; 
+}
+
+.card-lupa { 
+    max-width: 400px; 
+    margin: 100px auto; 
+    border: none; 
+    border-radius: 15px; 
+}
+
+.card-otp { 
+    max-width: 400px; 
+    margin: 100px auto; 
+    border: none; 
+    border-radius: 15px; 
+}
+
+/* Styling Input OTP */
+.otp-input { 
+    letter-spacing: 10px; 
+    font-size: 2rem; 
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+.otp-input:focus {
+    border-color: var(--maroon);
+    box-shadow: none;
+}
+
+/* Trik agar border icon sebelah kiri ikut merah kalau error */
+.input-group-text.error-border {
+    border-color: #dc3545;
+    color: #dc3545 !important;
+}
+
+/* Wrapper Penyatu Textfield & Icon Mata */
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    background-color: #fff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    overflow: hidden;
+}
+
+.password-wrapper:focus-within {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.password-wrapper .form-control {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding-right: 0;
+}
+
+.password-wrapper .toggle-icon {
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    color: #6c757d;
+    background: transparent;
+}
+
+.password-wrapper .toggle-icon:hover {
+    color: var(--maroon);
+}
+
+/* Efek Error Merah untuk Password Wrapper */
+.password-wrapper.is-invalid {
+    border-color: #dc3545;
+}
+
+.password-wrapper.is-invalid:focus-within {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.password-wrapper.is-invalid .toggle-icon {
+    color: #dc3545;
+}
+
+/* RESPONSIVE MOBILE (BIAR GAK RUSAK DI HP) & SIDEBAR */
+
+/* Efek transisi halus buat sidebar */
+.sidebar {
+    transition: all 0.3s ease-in-out;
+}
+
+#sidebarToggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* 1. Paksa form konten untuk turun ke bawah / full width */
+    body > .d-flex {
+        flex-direction: column !important;
+    }
+
+    /* 2. Munculkan tombol 3 strip di HP */
+    #sidebarToggle {
+        display: inline-block;
+    }
+
+    /* 3. Sembunyikan sidebar ke kiri layar HP */
+    .sidebar {
+        position: fixed !important;
+        left: -250px;
+        top: 0;
+        height: 100vh;
+        z-index: 999;
+        width: 250px !important; 
+        border-right: none;
+        overflow-y: auto;
+    }
+
+    /* 4. Ini yang bikin sidebar nongol pas di-klik (JS nambahin class active) */
+    .sidebar.active {
+        left: 0;
+        box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+    }
+
+    /* 5. Bikin background gelap sedikit pas sidebar muncul */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 998;
+    }
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* -------------------------------------
+       Perbaikan Layout Form (Login, OTP, dll)
+       ------------------------------------- */
+    .card-reset, .card-lupa, .card-otp {
+        margin: 40px 15px !important;
+    }
+    .otp-input {
+        letter-spacing: 5px;
+        font-size: 1.5rem;
+    }
+}
