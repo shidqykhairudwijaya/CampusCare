@@ -427,5 +427,5 @@ http://localhost/CampusCare
 Link Video Presentasi:
 
 ```text
-(https://youtu.be/g6BIup64blY?si=o08eZTMKpIYxToHD)
+https://youtu.be/g6BIup64blY?si=o08eZTMKpIYxToHD
 ```
